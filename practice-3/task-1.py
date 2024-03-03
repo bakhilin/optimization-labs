@@ -85,7 +85,7 @@ while not flag:
         f_star = f_x_sh
         break
     if f_x_sh > 0:
-        b = x_sh
+        b = x_shls
         f_b = f_x_sh
         f_a = a-math.cos(a)
     else:
