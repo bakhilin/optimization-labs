@@ -102,6 +102,9 @@ i = 0
 a = 0
 b = 1
 x_1 = 0
+
+print("Метод Ньютона:")
+
 while not flag:
     i = i + 1
     if i == 1:
