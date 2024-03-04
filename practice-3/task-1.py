@@ -19,6 +19,9 @@ epsilon = 0.03
 def main_function(arg):
     return 1/2 * arg ** 2 - math.sin(arg) 
 
+
+print("Метод половинного деления:")
+
 while not flag:
     #1
     x_1 = (a+b-epsilon)/2
@@ -37,7 +40,7 @@ while not flag:
         y_m = main_function(x_m) 
         flag = True
 
-print("X_m=", x_m, " y_m=", y_m)
+print("x_m=", x_m, " f=", y_m)
 
 
 #method gold sechenyia
@@ -49,6 +52,8 @@ epsilon = 0.03
 flag = False
 i = 0
 x = 0
+
+print("Метод золотого сечения:")
 while not flag:
     i = i + 1
     #1
@@ -65,7 +70,7 @@ while not flag:
         x = (a+b)/2
         break
 
-print("x1=", x_1, " x=", x)
+print("x=", x_1, " f=", main_function(x_1))
 
 
 #3 method hord       
@@ -77,6 +82,8 @@ epsilon = 0.03
 f_a = a-math.cos(a)
 f_b = b - math.cos(b)
 
+print("Метод хорд:")
+
 while not flag: 
     x_sh = a - (f_a/(f_a - f_b)) * (a-b)
     f_x_sh = x_sh-math.cos(x_sh)
@@ -85,7 +92,7 @@ while not flag:
         f_star = f_x_sh
         break
     if f_x_sh > 0:
-        b = x_shls
+        b = x_sh
         f_b = f_x_sh
         f_a = a-math.cos(a)
     else:
@@ -94,7 +101,7 @@ while not flag:
         f_b = b - math.cos(b)
 
 
-print("x~ =", x_sh, " f* =", f_star)
+print("x~ =", x_sh, " f=", main_function(x_sh))
 
 #4 method nuitona
 flag = False
@@ -118,4 +125,4 @@ while not flag:
         f_star = main_function(x_1)
         break
 
-print("x*=", x_star, " y*=", f_star)
+print("x*=", x_star, " f=", f_star)
